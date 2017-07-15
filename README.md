@@ -31,7 +31,7 @@ Most of this code has been cobbled together, duct tape and bailing wire style (d
 - **printdebug**: The ruby keylogger, torn out of powershell empire so it is standalone. It writes to /tmp/debug.db.
 - **printproxy**: the "proxy2" python proxy, for python 2.7, slightly modified so that it listens on more than localhost
 - **packer.py**: a thin layer of obfuscation - encodes shellscripts into base64, and runs them through python to hide cleartext. Probably a good idea to run on cups.sh, launch.sh and snapshot.sh once you're done editing them. Remember to chmod things correctly and change the file extention in launch.sh if you use this. It'll create .py files. Just make sure everything lines up.
-------
+
 
 ## WORKFLOW:
 ------
