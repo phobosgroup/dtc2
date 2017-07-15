@@ -1,0 +1,7 @@
+body {
+  background: #000;
+}
+body .pirate-container {
+  width: 402px;
+  margin: 0 auto;
+}
