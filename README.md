@@ -14,6 +14,7 @@ WARNING: You will ABSOLUTELY NEED to go into these files and edit them: dtc2.sh,
 - **cups.sh**: This is the main runscript that runs every 30 minutes. Modify this as you see fit.
 - **tunnel.sh**: a simple bash loop to keep an ssh tunnel alive.
 - **gallery.html**: a terrible, but simple drop-in gallery
+- **snapshot.sh**: a terrible shellscript to take pictures of desktop/webcam and upload them to the crappy upload.php catcher
 - **getImages.php**: this builds the imagelist for the gallery html
 - **style.css**: css for gallery
 - **upload.php**: terrible file upload catcher. gets files for you and dumps them in a gallery dir
@@ -22,7 +23,7 @@ WARNING: You will ABSOLUTELY NEED to go into these files and edit them: dtc2.sh,
 - **almondrocks3.py**: Same thing, but for python3.
 - **printdebug**: The ruby keylogger, torn out of powershell empire so it is standalone. It writes to /tmp/debug.db.
 - **printproxy**: the "proxy2" python proxy, for python 2.7, slightly modified so that it listens on more than localhost
-- **packer.py**: a thin layer of obfuscation - encodes shellscripts into base64, and runs them through python to hide cleartext. Probably a good idea to run on cups.sh and launch.sh once you're done editing them. Remember to chmod things correctly and change the file extention in launch.sh if you use this. It'll create .py files. Just make sure everything lines up.
+- **packer.py**: a thin layer of obfuscation - encodes shellscripts into base64, and runs them through python to hide cleartext. Probably a good idea to run on cups.sh, launch.sh and snapshot.sh once you're done editing them. Remember to chmod things correctly and change the file extention in launch.sh if you use this. It'll create .py files. Just make sure everything lines up.
 
 # DISCLAIMER
 Most of this code has been cobbled together, duct tape and bailing wire style (duct tape c2, get it now?), it is horribly vulnerable, and could use a lot of polish and work.
