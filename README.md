@@ -31,12 +31,14 @@ Most of this code has been cobbled together, duct tape and bailing wire style (d
 ------
 
 # WORKFLOW:
+------
   buy hosting/vm -> setup webserver/letsencrypt/basicauth/etc -> upload files -> create all your payloads -> stand up your listeners -> edit launch.sh and cups.sh -> pack .sh files -> upload -> launch using **curl -s haxsite.lol/launch.py | python &**
 
 You may also want to drop the gallery files into place somewhere so you can upload them. It is **STRONGLY ADVISABLE** to use letsencrypt and apache/nginx basic auth so that your victims can't just stumble across your files, and that you aren't transmitting things in the clear.
-------
+
 
 # PIRATE
+------
 In this directory are some files:
 - **WebViewScreenSaver.saver**: a screensaver file, borrowed from https://github.com/liquidx/webviewscreensaver - modified so that the default url to open is **file:///tmp/pirate/index.html**
 - ** css, js, scss, index.html**: an HTML5, animated version of the archer pirate virus, with no sound
