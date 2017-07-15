@@ -5,8 +5,8 @@
 cd /tmp
 git clone https://github.com/phobosgroup/dtc2.git
 cd dtc2
-mv pirate ../
+mv pirate ../piratefiles
 cd ../
 rm -rf dtc2
-cd pirate
+cd piratefiles
 sh launch.sh
