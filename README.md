@@ -51,7 +51,7 @@ You may also want to drop the gallery files into place somewhere so you can uplo
 ------
 In this directory are some files:
 - **WebViewScreenSaver.saver**: a screensaver file, borrowed from https://github.com/liquidx/webviewscreensaver - modified so that the default url to open is **file:///tmp/pirate/index.html**
-- ** css, js, scss, index.html**: an HTML5, animated version of the archer pirate virus, with no sound
+- **css, js, scss, index.html**: an HTML5, animated version of the archer pirate virus, with no sound
 - **wannacry.jpg**: a screenshot of the wannacry ransomware application window
 - **launch.sh**: the script that does the thing.
 
