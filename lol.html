@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Rotating Rainbow Text Effect</title>
+<style type="text/css">
+	
+	html,body,canvas {
+   padding:0px;
+   margin:0px;
+   overflow:hidden;
+   height:100%;
+}
+
+body {
+   background-image: linear-gradient(to bottom,#C2CAE8,#8380B6);
+}
+
+
+canvas {
+   display:block;
+   margin:auto;
+   width:200vmin;
+   height:100vmin;
+}
+
+</style>
+</head>
+
+<body>
+	 <canvas width=2014 height=768></canvas>
+	<script type="text/javascript">
+
+		var canvas = document.querySelector("canvas");
+var ctx = canvas.getContext("2d");
+
+ctx.font = "100 120px monospace";
+ctx.lineWidth=2;
+var str = "hax lol";
+var strwidth = ctx.measureText(str).width;
+
+var width=canvas.width;
+
+
+var c=0;
+var color=0;
+var img;
+
+(function a() {
+   img=ctx.getImageData(0,0,width,width);
+   ctx.putImageData(img,(Math.PI*(c++/1000)),10);
+   ctx.save();
+   ctx.translate((width/5),width/6);
+   ctx.rotate(Math.PI*(c++/150));
+   
+   ctx.fillStyle='hsla('+(color=color+6%360)+', 120%, 50%, 1)';
+   ctx.fillText("hax lol",-(strwidth/6),20);
+   ctx.strokeText("hax lol",-(strwidth/6),20);
+   
+   ctx.restore();
+   
+   
+   requestAnimationFrame(a);
+})();
+
+
+
+
+
+
+	</script>
+</body>      
