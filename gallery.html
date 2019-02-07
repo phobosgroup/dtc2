@@ -33,9 +33,12 @@ function putImages(){
 		  if(xmlhttp.responseText){
 			 var resp = xmlhttp.responseText.replace("\r\n", ""); 
 			 var files = resp.split(";");
+			 for(i=0; i<files.length; i++){
+				files[i] = files[i].trim();
+			 }
 			  var j = 0;
 			  for(i=0; i<files.length; i++){
-				  if(files[i] != ""){
+				  if(files[i] != "" && files[i] != "  "){
 					 document.getElementById("container").innerHTML += '<a href="'+files[i]+'" target=_blank><img src="'+files[i]+'" width=300 /></a>';
 					 j++;
 				  
@@ -53,3 +56,4 @@ function putImages(){
 		
 		
 </script>
+
